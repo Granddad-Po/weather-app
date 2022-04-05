@@ -1,45 +1,51 @@
 import React from "react";
-import { GlobalSvgSelector } from "../../../../assets/icons/global/GlobalSvgSelector";
 import s from './ThisDayInfo.module.scss';
+import { ThisDayItem } from "./ThisDayItem";
+import cloud from '../../../../assets/images/cloud.png';
 
 interface Props {
 
 }
 
+export interface Item {
+	icon_id: string,
+	name: string,
+	value: string
+}
+
 export const ThisDayInfo = (props: Props) => {
+
+	const items = [
+		{
+			icon_id: 'temp',
+			name: 'Температура',
+			value: '20° - ощущается как 17°'
+		},
+		{
+			icon_id: 'pressure',
+			name: 'Давление',
+			value: '765 мм ртутного столба - нормальное'
+		},
+		{
+			icon_id: 'precipitation',
+			name: 'Осадки',
+			value: 'Без осадков'
+		},
+		{
+			icon_id: 'wind',
+			name: 'Ветер',
+			value: '23 м/с юго-запад - легкий ветер'
+		},
+	];
+
 	return (
 		<div className={s.this_day_info}>
 			<div className={s.this_day_info__item}>
-				<div className={s.item__circle}>
-					<GlobalSvgSelector id='temp' />
-				</div>
-				<div className={s.item__title}>Температура</div>
-				<div className={s.item__text}>20° - ощущается как 17°</div>
+				{items.map((item: Item) => (
+					<ThisDayItem item={item} />
+				))}
 			</div>
-
-			<div className={s.this_day_info__item}>
-				<div className={s.item__circle}>
-					<GlobalSvgSelector id='pressure' />
-				</div>
-				<div className={s.item__title}>Давление</div>
-				<div className={s.item__text}>765 мм ртутного столба - нормальное</div>
-			</div>
-
-			<div className={s.this_day_info__item}>
-				<div className={s.item__circle}>
-					<GlobalSvgSelector id='precipitation' />
-				</div>
-				<div className={s.item__title}>Осадки</div>
-				<div className={s.item__text}>Без осадков</div>
-			</div>
-
-			<div className={s.this_day_info__item}>
-				<div className={s.item__circle}>
-					<GlobalSvgSelector id='wind' />
-				</div>
-				<div className={s.item__title}>Ветер</div>
-				<div className={s.item__text}>3 м/с юго-запад - легкий ветер</div>
-			</div>
+			<img src={cloud} alt="облако" />
 		</div>
 	)
 }
