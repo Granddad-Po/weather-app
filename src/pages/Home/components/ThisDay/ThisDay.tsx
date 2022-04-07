@@ -14,7 +14,9 @@ export const ThisDay = (props: Props) => {
 					<div className={s.top__temp}>20<span>&#xb0;</span></div>
 					<div className={s.top__today}>Monday</div>
 				</div>
+				<div className={s.this_day__img}>
 				<GlobalSvgSelector id='sun' />
+				</div>
 			</div>
 			<div className={s.this_day__bottom}>
 				<div className={s.bottom__time}>Time: <span>20:54</span></div>
