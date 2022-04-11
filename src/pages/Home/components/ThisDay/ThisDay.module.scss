@@ -5,6 +5,7 @@
 	padding: 20px;
 	max-width: 400px;
 	width: 100%;
+	background: var(#{--components-background-default});
 	height: 300px;
 	border-radius: $border-radius;
 	box-shadow: $box-shadow;
@@ -16,11 +17,12 @@
 		.top__temp {
 			font-weight: 500;
 			font-size: 96px;
-			color: $blue;
+			color: $primary-color;
 		}
 		.top__today {
 			font-weight: 400;
 			font-size: 40px;
+			color: var(#{--text-color-default});
 		}
 		.this_day__img {
 			svg{
@@ -32,7 +34,7 @@
 	.this_day__bottom {
 		font-weight: 400;
 		font-size: 25px;
-		color: $lite-gray;
+		color: $base-color;
 		.bottom__time {
 			margin-bottom: 14px;
 		}

@@ -16,8 +16,8 @@ export const Card = ({ days }: Props) => {
 			<div className={s.icon_id}>{
 				<GlobalSvgSelector id={icon_id} />
 			}</div>
-			<div className={s.temp_day}>{temp_day}</div>
-			<div className={s.temp_night}>{temp_night}</div>
+			<div className={s.temp_day}>{temp_day}<span>&#xb0;</span></div>
+			<div className={s.temp_night}>{temp_night}<span>&#xb0;</span></div>
 			<div className={s.info}>{info}</div>
 		</div>
 	)

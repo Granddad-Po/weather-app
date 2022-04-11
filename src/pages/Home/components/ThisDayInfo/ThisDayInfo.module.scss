@@ -10,6 +10,7 @@
 	height: 300px;
 	border-radius: $border-radius;
 	box-shadow: $box-shadow;
+	background: var(#{--components-background-default});
 }
 .this_day_info__item {
 	display: flex;
@@ -34,12 +35,13 @@
 	.indicator__name {
 		font-weight: 400;
 		font-size: 14px;
-		color: $lite-gray;
+		color: $base-color;
 		width: 100px;
 	}
 	.indicator__value {
 		font-weight: 400;
 		font-size: 14px;
+		color: var(#{--text-color-default})
 	}
 }
 .cloud {
