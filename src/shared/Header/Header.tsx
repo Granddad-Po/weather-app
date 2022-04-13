@@ -12,7 +12,7 @@ interface Props {
 }
 
 export const Header = (props: Props) => {
-const theme = useTheme();
+	const theme = useTheme();
 
 	const options = [
 		{ value: 'spb', label: 'Saint-Petersburg' },
@@ -33,7 +33,17 @@ const theme = useTheme();
 		singleValue: (styles: any) => ({
 			...styles,
 			color: theme.theme === Theme.DARK ? '#fff' : '#000',
-		})
+		}),
+		menuList: (styles: any) => ({
+			...styles,
+			color: theme.theme === Theme.DARK ? '#fff' : '#000',
+			backgroundColor: theme.theme === Theme.DARK ? '#4F4F4F' : 'rgba(71, 147, 255, 0.2)',
+		}),
+		menuPortal: (styles: any) => ({
+			...styles,
+			color: theme.theme === Theme.DARK ? '#fff' : '#000',
+			backgroundColor: '#4793FF',
+		}),
 	}
 
 	function changeTheme() {
@@ -52,7 +62,14 @@ const theme = useTheme();
 				<div className={s.change_theme} onClick={changeTheme}>
 					<GlobalSvgSelector id='change-theme' />
 				</div>
-				<Select defaultValue={options[0]} styles={colourStyles} options={options} />
+				<Select defaultValue={options[0]} styles={colourStyles} options={options}
+					theme={(theme: any) => ({
+						...theme,
+						colors: {
+							primary: '#4793FF',
+							primary25: '#4793FF',
+						},
+					})} />
 			</div>
 		</header>
 	)
